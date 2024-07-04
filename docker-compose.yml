@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  post:
+    container_name: post_container
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - ./docker-volumes/postgres:/var/lib/postgresql
+    ports:
+      - "5435:5432"
+
