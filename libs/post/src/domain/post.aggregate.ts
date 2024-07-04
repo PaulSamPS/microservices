@@ -9,7 +9,7 @@ import {
   validateSync,
 } from 'class-validator';
 import { Exclude } from 'class-transformer';
-import { HttpException, HttpStatus } from '@nestjs/common';
+import { DomainError } from '@lib/errors';
 
 export class PostAggregate extends PostServices implements IPost {
   @IsUUID()
@@ -48,7 +48,7 @@ export class PostAggregate extends PostServices implements IPost {
     const errors = validateSync(_post, { whitelist: true });
 
     if (!!errors.length) {
-      throw new HttpException('Пост не валиден', HttpStatus.BAD_REQUEST);
+      throw new DomainError(errors, 'Пост не валиден');
     }
 
     return _post;
