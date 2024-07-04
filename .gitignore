@@ -47,6 +47,8 @@ lerna-debug.log*
 .tmp
 /docker-volumes
 
+libs/providers/prisma/migrations
+
 # Runtime data
 pids
 *.pid
