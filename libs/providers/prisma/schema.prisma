@@ -25,7 +25,7 @@ model Post {
   title       String
   message     String
   isPublished Boolean
-  DateTime    DateTime @default(now())
+  createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
   author_id String @unique @db.Uuid
