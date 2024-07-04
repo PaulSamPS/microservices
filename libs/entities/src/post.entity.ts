@@ -1,9 +1,11 @@
-export class PostEntity {
+import { Post } from '@prisma/client';
+
+export class PostEntity implements Post {
   id: string;
   title: string;
   message: string;
-  author_id: string;
+  authorId: string;
   isPublished: boolean;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
