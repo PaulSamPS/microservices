@@ -1,3 +1,5 @@
+import { PaginationDto } from '@lib/shared';
+
 export class GetPostsQuery {
-  constructor() {}
+  constructor(public readonly pagination: PaginationDto) {}
 }
