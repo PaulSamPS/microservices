@@ -7,3 +7,11 @@ export const POST_QUERIES_HANDLERS: Type<IQueryHandler>[] = [
   GetPostQueryHandler,
   GetPostsQueryHandler,
 ];
+
+// Query
+export * from './get-post/get-post.query';
+export * from './get-posts/get-posts.query';
+
+// Handlers
+export * from './get-post/get-post.query.handler';
+export * from './get-posts/get-post.query.handler';
